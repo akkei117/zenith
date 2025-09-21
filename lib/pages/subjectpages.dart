@@ -155,7 +155,7 @@ class _SubjectPageState extends State<SubjectPage> {
                 ListTile(
                   onTap: () {
                     _advancedDrawerController.hideDrawer();
-                    // TODO: Implement exit functionality (e.g., using exit(0))
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Scaffold(body: Center(child: Text("You may leave this Website"),),)));
                   },
                   leading: const Icon(Icons.exit_to_app),
                   title: Text('Exit', style: GoogleFonts.poppins()),
@@ -165,7 +165,7 @@ class _SubjectPageState extends State<SubjectPage> {
                   style: const TextStyle(fontSize: 12, color: Colors.white54),
                   child: Container(
                     margin: const EdgeInsets.symmetric(vertical: 16.0),
-                    child: const Text('Made by Sanidhya Malviya'),
+                    child: const Text('Made by Sanidhya Malviya and Shivam Khandelwal\nIn collabration with Smart'),
                   ),
                 ),
               ],
