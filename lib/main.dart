@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -29,7 +29,7 @@ class _LoaderPageState extends State<LoaderPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            LottieBuilder.asset("lib/assets/animations/Cosmos.json" , animate: true,fit: BoxFit.cover,),
+            
           ],
         ),
       ),
