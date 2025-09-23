@@ -1,5 +1,3 @@
-// resourcelistpage.dart
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -36,39 +34,357 @@ class ResourceListPage extends StatelessWidget {
   });
 
   // Dummy data based on the resource type
-  List<Resource> _getDummyResources(String type) {
+  List<Resource> _getDummyResources(String type, String subjectTitle) {
     if (type == 'Notes') {
       return [
         Resource(
-          title: 'Thermodynamics Principles for Engineers',
-          description: 'Comprehensive notes covering key concepts and applications in thermodynamics for engineering students.',
+          title: 'Comming Soon',
+          description:
+              'Comprehensive notes covering key concepts and applications Comming Soon.',
           fileType: 'PDF',
           date: '2023-10-26',
           url: 'https://drive.google.com/your-thermo-notes-link',
         ),
-        Resource(
-          title: 'Fluid Mechanics: Advanced Topics',
-          description: 'Detailed study materials on advanced fluid dynamics, including Navier-Stokes equations and boundary layers.',
-          fileType: 'PDF',
-          date: '2023-10-25',
-          url: 'https://drive.google.com/your-fluid-mech-notes-link',
-        ),
-        Resource(
-          title: 'Heat Transfer Mechanisms',
-          description: 'Exploration of conduction, convection, and radiation with practical engineering examples and solved problems.',
-          fileType: 'PDF',
-          date: '2023-10-24',
-          url: 'https://drive.google.com/your-heat-transfer-notes-link',
-        ),
       ];
-    } else if (type == 'Previous Year Question Paper') {
+    }
+    // This is the PYQs Section of the Sem 1 \\
+
+
+    //PYQS of Linear Algebra(Done)
+    else if (type == 'Previous Year Question Paper' &&
+        subjectTitle == "Linear Algebra") {
       return [
         Resource(
-          title: 'PYQ 2022 (Solved)',
-          description: 'Previous year question paper with detailed solutions for 2022 batch.',
+          title: 'End Semesters Test(Linear Algebra)',
+          description:
+              'Previous year question paper of Linear Algebra(End Semester Test).',
           fileType: 'PDF',
-          date: '2023-10-25',
+          date: '22-07-2025',
+          url: 'https://drive.google.com/file/d/1gieLcU9pNFTwaLpXbzIzCtjFCSh_xlU9/view',
+        ),
+        Resource(
+          title: 'Mid Semester Test 1 (Linear Algebra)',
+          description:
+              'Previous year question paper of Linear Algebra(End Semester Test 1).',
+          fileType: 'PDF',
+          date: '22-07-2025',
+          url: 'https://drive.google.com/file/d/1gMPat8kXgqOz1QiB3c3MiJW-emYGt_aC/view',
+        ),
+      ];
+    }
+    //PYQS of Basic Electrical Engineering(Done)
+    else if (type == 'Previous Year Question Paper' &&
+        subjectTitle == "Basic Electrical Engineering") {
+      return [
+        Resource(
+          title: 'End Semester Test (Basic Electrical Engineering)',
+          description:
+              'Previous year question paper of Basic Electrical Engineering (End Semester Test).',
+          fileType: 'PDF',
+          date: '22-07-2025',
+          url: 'https://drive.google.com/file/d/1ltkw1MaaTaWzRpO-mhJG0Let-0FRCRgl/view',
+        ),
+        Resource(
+          title: 'Mid Semester Test 1 (Basic Electrical Engineering)',
+          description:
+              'Previous year question paper of Basic Electrical Engineering (Mid Semester Test 1).',
+          fileType: 'PDF',
+          date: '22-07-2025',
+          url: 'https://drive.google.com/file/d/1gvW5UwuVpn8ovXq088nT4wWYeooV6Yo3/view',
+        ),
+        Resource(
+          title: 'Mid Semester Test 2 (Basic Electrical Engineering)',
+          description:
+              'Previous year question paper of Basic Electrical Engineering (Mid Semester Test 2).',
+          fileType: 'PDF',
+          date: '22-07-2025',
+          url: 'https://drive.google.com/file/d/12gab3o-24h4XGgnm9Tp0AMRAhCM3BfYk/view',
+        ),
+      ];
+    }
+    //PYQs of Applied Chemistry(Done)
+    else if (type == 'Previous Year Question Paper' &&
+        subjectTitle == "Applied Chemistry") {
+      return [
+        Resource(
+          title: 'End Semester Test (Applied Chemistry)',
+          description:
+              'Previous year question paper of Applied Chemistry (End Semester Test).',
+          fileType: 'PDF',
+          date: '22-07-2025',
+          url: 'https://drive.google.com/file/d/1hdp4exzbBUK-5goxQRRSe-XV7UdDWTPe/view',
+        ),
+        Resource(
+          title: 'Mid Semester Test 1 Applied Chemistry)',
+          description:
+              'Previous year question paper of Applied Chemistry (Mid Semester Test 1).',
+          fileType: 'PDF',
+          date: '22-07-2025',
+          url: 'https://drive.google.com/file/d/1h02ePpEYSJG3gUw94Q05Bkqw8TJYLyTe/view',
+        ),
+        Resource(
+          title: 'Mid Semester Test 2 (Applied Chemistry)',
+          description:
+              'Previous year question paper of Applied Chemistry (Mid Semester Test 2).',
+          fileType: 'PDF',
+          date: '22-07-2025',
+          url: 'https://drive.google.com/file/d/1hKsgPQ04Ec0oIqxY5JimdkhRzFcUPN-0/view',
+        ),
+      ];
+    }
+    //PYQs of Fundamentals of Mechanical Engineering(Done)
+    else if (type == 'Previous Year Question Paper' &&
+        subjectTitle == "Fundamentals of Mechanical Engineering") {
+      return [
+        Resource(
+          title: 'End Semester Test (all subjects)',
+          description:
+              'Previous year question paper of all subjects (End Semester Test).',
+          fileType: 'PDF',
+          date: '22-07-2025',
+          url: 'https://drive.google.com/file/d/12e-2Gfr2ukPxISi3zGYaG4OTrffwsAjg/view',
+        ),
+        Resource(
+          title: 'Mid Semester Test 1 Fundamentals of Mechanical Engineering)',
+          description:
+              'Previous year question paper of Fundamentals of Mechanical Engineering (Mid Semester Test 1).',
+          fileType: 'PDF',
+          date: '22-07-2025',
+          url: 'https://drive.google.com/file/d/1grKlyLLpthkneqtKm1PnkrsDkkrbKS9L/view',
+        ),
+        Resource(
+          title: 'Mid Semester Test 2 (Fundamentals of Mechanical Engineering)',
+          description:
+              'Previous year question paper of Fundamentals of Mechanical Engineering (Mid Semester Test 2).',
+          fileType: 'PDF',
+          date: '22-07-2025',
+          url: 'https://drive.google.com/file/d/1hEVcjzMAkXAqikFYmr9beu1up1CxjW3G/view',
+        ),
+      ];
+    }
+    //PYQs of Engineering Mechanics(Done)
+    else if (type == 'Previous Year Question Paper' &&
+        subjectTitle == "Engineering Mechanics") {
+      return [
+        Resource(
+          title: 'End Semester Test (Engineering Mechanics)',
+          description:
+              'Previous year question paper of Engineering Mechanics (End Semester Test).',
+          fileType: 'PDF',
+          date: '22-07-2025',
+          url: 'https://drive.google.com/file/d/1hZGIudcV2FJv_LvogKBQ_wX9_x6MUBZW/view',
+        ),
+        Resource(
+          title: 'Mid Semester Test 1 Engineering Mechanics)',
+          description:
+              'Previous year question paper of Engineering Mechanics (Mid Semester Test 1).',
+          fileType: 'PDF',
+          date: '22-07-2025',
+          url: 'https://drive.google.com/file/d/1hB_hK1huqKywlX-9fzhGB7cc7PJ1i-LD/view',
+        ),
+        Resource(
+          title: 'Mid Semester Test 2 (Engineering Mechanics)',
+          description:
+              'Previous year question paper of Engineering Mechanics (Mid Semester Test 2).',
+          fileType: 'PDF',
+          date: '22-07-2025',
+          url: 'https://drive.google.com/file/d/1hZGIudcV2FJv_LvogKBQ_wX9_x6MUBZW/view',
+        ),
+      ];
+    }
+    //PYQs of Communicative English
+    else if (type == 'Previous Year Question Paper' &&
+        subjectTitle == "Communicative English") {
+      return [
+        Resource(
+          title: 'End Semester Test (Communicative English)',
+          description:
+              'Previous year question paper of Communicative English (End Semester Test).',
+          fileType: 'PDF',
+          date: '22-07-2025',
           url: 'https://drive.google.com/your-pyq-link',
+        ),
+        Resource(
+          title: 'Mid Semester Test 1 Communicative English)',
+          description:
+              'Previous year question paper of Communicative English (Mid Semester Test 1).',
+          fileType: 'PDF',
+          date: '22-07-2025',
+          url: 'https://drive.google.com/file/d/1gyXBwVaLIPfa38-vK8-LYKhsJxuYMNl5/view',
+        ),
+        Resource(
+          title: 'Mid Semester Test 2 (all subjects)',
+          description:
+              'Previous year question paper of all subjects (Mid Semester Test 2).',
+          fileType: 'PDF',
+          date: '22-07-2025',
+          url: 'https://drive.google.com/file/d/12gab3o-24h4XGgnm9Tp0AMRAhCM3BfYk/view',
+        ),
+      ];
+    }
+    // This is the PYQs Section of the Sem 2 \\
+    //PYQS of Basic Electronics Engineering(Done)
+    else if (type == 'Previous Year Question Paper' &&
+        subjectTitle == "Basic Electronics Engineering") {
+      return [
+        Resource(
+          title: 'End Semesters Test(Basic Electronics Engineering)',
+          description:
+              'Previous year question paper of Basic Electronics Engineering(End Semester Test).',
+          fileType: 'PDF',
+          date: '22-07-2025',
+          url: 'https://drive.google.com/file/d/1gVZw_5VHcr92PQqxufpkWjifiByeLXjh/view',
+        ),
+        Resource(
+          title: 'Mid Semester Test 2 (Basic Electronics Engineering)',
+          description:
+              'Previous year question paper of Basic Electronics Engineering(Mid Semester Test 2).',
+          fileType: 'PDF',
+          date: '22-07-2025',
+          url: 'https://drive.google.com/file/d/1gVZp4faGGSBNP1JaWyJxjs2ApEdc7hgk/view',
+        ),
+      ];
+    }
+    //PYQS of Optics and Morden Physics(Done)
+    else if (type == 'Previous Year Question Paper' &&
+        subjectTitle == "Optics and Morden Physics") {
+      return [
+        Resource(
+          title: 'End Semester Test (Optics and Morden Physics)',
+          description:
+              'Previous year question paper of Optics and Morden Physics (End Semester Test).',
+          fileType: 'PDF',
+          date: '22-07-2025',
+          url: 'https://drive.google.com/file/d/1gipXwAprh5OplU3hv0mWj7p9wDc9inxv/view',
+        ),
+        Resource(
+          title: 'Mid Semester Test 1 (Optics and Morden Physics)',
+          description:
+              'Previous year question paper of Optics and Morden Physics (Mid Semester Test 1).',
+          fileType: 'PDF',
+          date: '22-07-2025',
+          url: 'https://drive.google.com/file/d/1g3GMb-lZxWK9MaJ_7JowRaYhKSleeVKW/view',
+        ),
+        Resource(
+          title: 'Mid Semester Test 2 (Optics and Morden Physics)',
+          description:
+              'Previous year question paper of Optics and Morden Physics (Mid Semester Test 2).',
+          fileType: 'PDF',
+          date: '22-07-2025',
+          url: 'https://drive.google.com/file/d/1gO28Z-NYw8TDsxikOH0C1f65pYwCfVwm/view',
+        ),
+      ];
+    }
+    //PYQs of Calculus
+    else if (type == 'Previous Year Question Paper' &&
+        subjectTitle == "Calculus") {
+      return [
+        Resource(
+          title: 'End Semester Test (Calculus)',
+          description:
+              'Previous year question paper of Calculus (End Semester Test).',
+          fileType: 'PDF',
+          date: '22-07-2025',
+          url: 'https://drive.google.com/file/d/1hQYwAhDr_0XQkQAaKtZGT-Ajsvq3Jtjm/view',
+        ),
+        Resource(
+          title: 'Mid Semester Test 1 (Calculus)',
+          description:
+              'Previous year question paper of Calculus (Mid Semester Test 1).',
+          fileType: 'PDF',
+          date: '22-07-2025',
+          url: 'https://drive.google.com/file/d/1gnrzhBx5bBZM8dYTP9Jsqur1UBZ1x9qi/view',
+        ),
+        Resource(
+          title: 'Mid Semester Test 2 (Calculus)',
+          description:
+              'Previous year question paper of Calculus (Mid Semester Test 2).',
+          fileType: 'PDF',
+          date: '22-07-2025',
+          url: 'https://drive.google.com/file/d/1hDfLpP8cGrn4GMJ-1oWDo26B6xky6bU5/view',
+        ),
+      ];
+    }
+    //PYQs of Engineering Graphics and Visiulation(Done)
+    else if (type == 'Previous Year Question Paper' &&
+        subjectTitle == "Engineering Graphics and Visiulation") {
+      return [
+        Resource(
+          title: 'End Semester Test (Engineering Graphics and Visiulation)',
+          description:
+              'Previous year question paper of Engineering Graphics and Visiulation (End Semester Test).',
+          fileType: 'PDF',
+          date: '22-07-2025',
+          url: 'https://drive.google.com/file/d/1ghNpYJV00bIjiiQxg47W62AsdRimRlkM/view',
+        ),
+        Resource(
+          title: 'Mid Semester Test 1 Engineering Graphics and Visiulation)',
+          description:
+              'Previous year question paper of Engineering Graphics and Visiulation (Mid Semester Test 1).',
+          fileType: 'PDF',
+          date: '22-07-2025',
+          url: 'https://drive.google.com/file/d/1g11hIwMLRNpcINbhhc59SvqdR0S1cxPB/view',
+        ),
+        Resource(
+          title: 'Mid Semester Test 2 (Engineering Graphics and Visiulation)',
+          description:
+              'Previous year question paper of Engineering Graphics and Visiulation (Mid Semester Test 2).',
+          fileType: 'PDF',
+          date: '22-07-2025',
+          url: 'https://drive.google.com/file/d/1gKSryWhJnlqz9IXbazgmymm9IopQ8pJ2/view',
+        ),
+      ];
+    }
+    //PYQs of Basic Civil Engineering(Done
+    else if (type == 'Previous Year Question Paper' &&
+        subjectTitle == "Basic Civil Engineering") {
+      return [
+        
+        Resource(
+          title: 'Mid Semester Test 1 (Basic Civil Engineering)',
+          description:
+              'Previous year question paper of Basic Civil Engineering (Mid Semester Test 1).',
+          fileType: 'PDF',
+          date: '22-07-2025',
+          url: 'https://drive.google.com/file/d/1g5v4O4L3MdfS3Sy5j-iWuty8vteVbGFG/view',
+        ),
+        Resource(
+          title: 'Mid Semester Test 2 (Basic Civil Engineering)',
+          description:
+              'Previous year question paper of Basic Civil Engineering (Mid Semester Test 2).',
+          fileType: 'PDF',
+          date: '22-07-2025',
+          url: 'https://drive.google.com/file/d/1gHWnhgkhj4X2LqYUph35o3RDe3AIeeP3/view',
+        ),
+      ];
+    }
+    //PYQs of Programming for Problem Solving()
+    else if (type == 'Previous Year Question Paper' &&
+        subjectTitle == "Programming for Problem Solving") {
+      return [
+        Resource(
+          title: 'End Semester Test (Programming for Problem Solving)',
+          description:
+              'Previous year question paper of Programming for Problem Solving (End Semester Test).',
+          fileType: 'PDF',
+          date: '22-07-2025',
+          url: 'https://drive.google.com/file/d/1gYhAv9glMphCdWmBjNw8SaTYqjJbtZSs/view',
+        ),
+        Resource(
+          title: 'Mid Semester Test 1 Programming for Problem Solving)',
+          description:
+              'Previous year question paper of Programming for Problem Solving (Mid Semester Test 1).',
+          fileType: 'PDF',
+          date: '22-07-2025',
+          url: 'https://drive.google.com/file/d/1gEz5ySyvWGwWV73YhOLBpYJO_Xcmz0Bb/view',
+        ),
+        Resource(
+          title: 'Mid Semester Test 2 (Programming for Problem Solving)',
+          description:
+              'Previous year question paper of Programming for Problem Solving (Mid Semester Test 2).',
+          fileType: 'PDF',
+          date: '22-07-2025',
+          url: 'https://drive.google.com/file/d/1gScte4m-UBzz0nFikpj6mmHG83XP5R1x/view',
         ),
       ];
     }
@@ -87,7 +403,7 @@ class ResourceListPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<Resource> resources = _getDummyResources(resourceType);
+    List<Resource> resources = _getDummyResources(resourceType, subjectTitle);
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -174,10 +490,7 @@ class ResourceListPage extends StatelessWidget {
           const SizedBox(height: 5),
           Text(
             resource.description,
-            style: GoogleFonts.poppins(
-              fontSize: 14,
-              color: Colors.grey[700],
-            ),
+            style: GoogleFonts.poppins(fontSize: 14, color: Colors.grey[700]),
           ),
           const SizedBox(height: 10),
           Row(
@@ -186,24 +499,18 @@ class ResourceListPage extends StatelessWidget {
               Row(
                 children: [
                   IconButton(
-                    icon: const Icon(Icons.download_rounded, color: Colors.black54),
+                    icon: const Icon(
+                      Icons.download_rounded,
+                      color: Colors.black54,
+                    ),
                     onPressed: () => _launchUrl(resource.url),
                   ),
                   const SizedBox(width: 4),
-                  IconButton(
-                    icon: const Icon(Icons.bookmark_border_rounded, color: Colors.black54),
-                    onPressed: () {
-                      // TODO: Implement bookmark functionality
-                    },
-                  ),
                 ],
               ),
               Text(
                 resource.date,
-                style: GoogleFonts.poppins(
-                  fontSize: 12,
-                  color: Colors.grey,
-                ),
+                style: GoogleFonts.poppins(fontSize: 12, color: Colors.grey),
               ),
             ],
           ),
