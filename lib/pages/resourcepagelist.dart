@@ -43,7 +43,33 @@ class ResourceListPage extends StatelessWidget {
               'Comprehensive notes covering key concepts and applications Comming Soon.',
           fileType: 'PDF',
           date: '2023-10-26',
-          url: 'https://drive.google.com/your-thermo-notes-link',
+          url: 'https://t3.ftcdn.net/jpg/12/92/86/02/360_F_1292860215_demIcxpy6ALiHZD57dz7lvIjVAndia4Z.jpg',
+        ),
+      ];
+    }
+
+    else if (type == 'Lab Manual') {
+      return [
+        Resource(
+          title: 'Comming Soon',
+          description:
+              'Comprehensive notes covering key concepts and applications comming Soon.',
+          fileType: 'PDF',
+          date: '2023-10-26',
+          url: 'https://t3.ftcdn.net/jpg/12/92/86/02/360_F_1292860215_demIcxpy6ALiHZD57dz7lvIjVAndia4Z.jpg',
+        ),
+      ];
+    }
+
+    else if (type == 'Assignments') {
+      return [
+        Resource(
+          title: 'Comming Soon',
+          description:
+              'Assignments comming Soon.',
+          fileType: 'PDF',
+          date: '2023-10-26',
+          url: 'https://t3.ftcdn.net/jpg/12/92/86/02/360_F_1292860215_demIcxpy6ALiHZD57dz7lvIjVAndia4Z.jpg',
         ),
       ];
     }

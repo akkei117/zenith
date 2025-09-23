@@ -85,7 +85,7 @@ class _SplashScreenState extends State<SplashScreen>
                 ),
               ),
               const Spacer(),
-              Padding(padding: EdgeInsets.all(20),child: Text("Made by Sanidhya Malviya and Shivam Khandelwal\nIn collabration with SMart"),)
+              Padding(padding: EdgeInsets.all(20),child: Text("Made by Sanidhya Malviya and Shivam Khandelwal"),)
             ],
           ),
         ),
