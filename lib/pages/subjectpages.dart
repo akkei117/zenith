@@ -165,7 +165,7 @@ class _SubjectPageState extends State<SubjectPage> {
                   style: const TextStyle(fontSize: 12, color: Colors.white54),
                   child: Container(
                     margin: const EdgeInsets.symmetric(vertical: 16.0),
-                    child: const Text('Made by Sanidhya Malviya and Shivam Khandelwal\nIn collabration with Smart'),
+                    child: const Text('Made by Sanidhya Malviya and Shivam Khandelwal\nIn collabration with Ritik Sharma'),
                   ),
                 ),
               ],
