@@ -20,7 +20,8 @@ class _SubjectPageState extends State<SubjectPage> {
   final _advancedDrawerController = AdvancedDrawerController();
   final _searchController = TextEditingController();
 
-  final List<String> sem1subject = [
+  // --- Subject and Icon Lists for All Semesters and Branches ---
+  final List<String> sem1subjects = [
     'Applied Chemistry',
     'Linear Algebra',
     'Basic Electrical Engineering',
@@ -28,15 +29,6 @@ class _SubjectPageState extends State<SubjectPage> {
     'Engineering Mechanics',
     'Communicative English',
   ];
-  final List<String> sem2subjects = [
-    'Basic Electronics Engineering',
-    'Optics and Morden Physics',
-    'Calculus',
-    'Engineering Graphics and Visiulation',
-    'Basic Civil Engineering',
-    'Programming for Problem Solving',
-  ];
-
   final List<IconData> sem1icons = [
     Icons.science_outlined,
     Icons.functions_outlined,
@@ -44,6 +36,15 @@ class _SubjectPageState extends State<SubjectPage> {
     Icons.precision_manufacturing_outlined,
     Icons.engineering_outlined,
     Icons.record_voice_over_outlined,
+  ];
+
+  final List<String> sem2subjects = [
+    'Basic Electronics Engineering',
+    'Optics and Morden Physics',
+    'Calculus',
+    'Engineering Graphics and Visiulation',
+    'Basic Civil Engineering',
+    'Programming for Problem Solving',
   ];
   final List<IconData> sem2icons = [
     Icons.memory_outlined,
@@ -54,6 +55,44 @@ class _SubjectPageState extends State<SubjectPage> {
     Icons.computer_outlined,
   ];
 
+  // Assuming 'AIML' is the string for the branch
+  final List<String> sem3aimlsubjects = [
+    'Introduction to AI',
+    'Data Structure and Algorithm',
+    'Probability and Statistics',
+    'Object Orinted Programming and Methodology',
+    'Entrepreneurship and Principles of Management',
+    'Computer Organization and Architecture',
+  ];
+  final List<IconData> sem3aimlicons = [
+    Icons.psychology_outlined, // For AI concepts/mind/logic
+    Icons.code_outlined, // For data structures and coding/algorithms
+    Icons.bar_chart_outlined, // For statistics/graphs/data
+    Icons.laptop_chromebook_outlined, // For programming/OOP
+    Icons.business_center_outlined, // For business/management/entrepreneurship
+    Icons.memory_outlined, // For computer hardware/architecture/memory
+  ];
+  
+  // Placeholder for other Sem 3 branches (e.g., if branch is not AIML)
+  // You should add actual subjects for other branches/semesters as needed.
+  final List<String> defaultSem3Subjects = [
+    'Introduction to AI',
+    'Data Structure and Algorithm',
+    'Probability and Statistics',
+    'Object Orinted Programming and Methodology',
+    'Entrepreneurship and Principles of Management',
+    'Computer Organization and Architecture',
+  ];
+  final List<IconData> defaultSem3Icons = [
+    Icons.psychology_outlined, // For AI concepts/mind/logic
+    Icons.code_outlined, // For data structures and coding/algorithms
+    Icons.bar_chart_outlined, // For statistics/graphs/data
+    Icons.laptop_chromebook_outlined, // For programming/OOP
+    Icons.business_center_outlined, // For business/management/entrepreneurship
+    Icons.memory_outlined, // For computer hardware/architecture/memory
+  ];
+  // -----------------------------------------------------------------
+
   List<String> _currentSubjects = [];
   List<IconData> _currentIcons = [];
   List<String> _filteredSubjects = [];
@@ -61,18 +100,45 @@ class _SubjectPageState extends State<SubjectPage> {
   @override
   void initState() {
     super.initState();
-    // Select the correct subject and icon list based on the semester
-    _currentSubjects = widget.semester == 1 ? sem1subject : sem2subjects;
-    _currentIcons = widget.semester == 1 ? sem1icons : sem2icons;
+    // Select the correct subject and icon list based on the semester and branch
+    _initializeSubjectAndIconLists();
 
     _filteredSubjects = List.from(_currentSubjects);
     _searchController.addListener(_filterSubjects);
+  }
+
+  // New method to handle logic for selecting the correct lists
+  void _initializeSubjectAndIconLists() {
+    if (widget.semester == 1) {
+      _currentSubjects = sem1subjects;
+      _currentIcons = sem1icons;
+    } else if (widget.semester == 2) {
+      _currentSubjects = sem2subjects;
+      _currentIcons = sem2icons;
+    } else if (widget.semester == 3) {
+      // Logic for Semester 3
+      if (widget.branch.toUpperCase() == 'AIML') {
+        _currentSubjects = sem3aimlsubjects;
+        _currentIcons = sem3aimlicons;
+      } else {
+        // Fallback for other branches in Sem 3 (e.g., 'CS', 'ME', etc.)
+        // **IMPORTANT:** You will need to define separate lists for other branches
+        // (e.g., sem3csesubjects, sem3mechesubjects, etc.) and add logic here.
+        _currentSubjects = defaultSem3Subjects;
+        _currentIcons = defaultSem3Icons;
+      }
+    } else {
+      // Default to empty for unhandled semesters
+      _currentSubjects = [];
+      _currentIcons = [];
+    }
   }
 
   @override
   void dispose() {
     _searchController.removeListener(_filterSubjects);
     _searchController.dispose();
+    _advancedDrawerController.dispose(); // Also dispose the drawer controller
     super.dispose();
   }
 
@@ -88,6 +154,17 @@ class _SubjectPageState extends State<SubjectPage> {
       }
     });
   }
+
+  // Helper function to get the icon for a filtered subject
+  IconData _getIconForSubject(String subjectTitle) {
+    final originalIndex = _currentSubjects.indexOf(subjectTitle);
+    // Ensure the index is valid before accessing the icon list
+    if (originalIndex != -1 && originalIndex < _currentIcons.length) {
+      return _currentIcons[originalIndex];
+    }
+    return Icons.error_outline; // Default error icon
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -126,7 +203,11 @@ class _SubjectPageState extends State<SubjectPage> {
                     color: Colors.black26,
                     shape: BoxShape.circle,
                   ),
-                  child: const Icon(Icons.whatshot, color: Colors.white, size: 60),
+                  child: const Icon(
+                    Icons.whatshot,
+                    color: Colors.white,
+                    size: 60,
+                  ),
                 ),
                 Text(
                   'User',
@@ -142,7 +223,9 @@ class _SubjectPageState extends State<SubjectPage> {
                     _advancedDrawerController.hideDrawer();
                     Navigator.pushReplacement(
                       context,
-                      MaterialPageRoute(builder: (context) => const Preffrence()),
+                      MaterialPageRoute(
+                        builder: (context) => const Preffrence(),
+                      ),
                     );
                   },
                   leading: const Icon(Icons.settings),
@@ -151,11 +234,20 @@ class _SubjectPageState extends State<SubjectPage> {
                     style: GoogleFonts.poppins(),
                   ),
                 ),
-                
+
                 ListTile(
                   onTap: () {
                     _advancedDrawerController.hideDrawer();
-                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Scaffold(body: Center(child: Text("You may leave this Website"),),)));
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const Scaffold(
+                          body: Center(
+                            child: Text("You may leave this Website"),
+                          ),
+                        ),
+                      ),
+                    );
                   },
                   leading: const Icon(Icons.exit_to_app),
                   title: Text('Exit', style: GoogleFonts.poppins()),
@@ -165,7 +257,9 @@ class _SubjectPageState extends State<SubjectPage> {
                   style: const TextStyle(fontSize: 12, color: Colors.white54),
                   child: Container(
                     margin: const EdgeInsets.symmetric(vertical: 16.0),
-                    child: const Text('Made by Sanidhya Malviya and Shivam Khandelwal\nIn collabration with Ritik Sharma'),
+                    child: const Text(
+                      'Made by Sanidhya Malviya and Shivam Khandelwal\nIn collabration with Ritik Sharma',
+                    ),
                   ),
                 ),
               ],
@@ -177,10 +271,10 @@ class _SubjectPageState extends State<SubjectPage> {
         backgroundColor: Colors.white,
         appBar: AppBar(
           title: Text(
-            'Subjects',
+            'Subjects (${widget.branch} - Sem ${widget.semester})', // Updated title
             style: GoogleFonts.bebasNeue(
               color: Colors.black,
-              fontSize: 40,
+              fontSize: 30, // Slightly smaller to fit the text
               fontWeight: FontWeight.w300,
             ),
           ),
@@ -213,34 +307,42 @@ class _SubjectPageState extends State<SubjectPage> {
               _buildSearchBar(),
               const SizedBox(height: 20),
               Expanded(
-                child: GridView.builder(
-                  gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-                    maxCrossAxisExtent: 200.0,
-                    crossAxisSpacing: 16.0,
-                    mainAxisSpacing: 16.0,
-                    childAspectRatio: 0.9,
-                  ),
-                  itemCount: _filteredSubjects.length,
-                  itemBuilder: (context, index) {
-                    final originalIndex = _currentSubjects.indexOf(_filteredSubjects[index]);
-                    return SubjectCard(
-                      title: _filteredSubjects[index],
-                      icon: _currentIcons[originalIndex],
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => SubjectDetails(
-                              subjectTitle: _filteredSubjects[index],
-                              branch: widget.branch,
-                              semester: widget.semester,
-                            ),
-                          ),
-                        );
-                      },
-                    );
-                  },
-                ),
+                child: _filteredSubjects.isEmpty
+                    ? Center(
+                        child: Text(
+                          'No subjects found for ${widget.branch} Semester ${widget.semester}.',
+                          textAlign: TextAlign.center,
+                          style: GoogleFonts.poppins(fontSize: 16, color: Colors.grey),
+                        ),
+                      )
+                    : GridView.builder(
+                        gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                          maxCrossAxisExtent: 200.0,
+                          crossAxisSpacing: 16.0,
+                          mainAxisSpacing: 16.0,
+                          childAspectRatio: 0.9,
+                        ),
+                        itemCount: _filteredSubjects.length,
+                        itemBuilder: (context, index) {
+                          final subjectTitle = _filteredSubjects[index];
+                          return SubjectCard(
+                            title: subjectTitle,
+                            icon: _getIconForSubject(subjectTitle), // Use the new helper function
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => SubjectDetails(
+                                    subjectTitle: subjectTitle,
+                                    branch: widget.branch,
+                                    semester: widget.semester,
+                                  ),
+                                ),
+                              );
+                            },
+                          );
+                        },
+                      ),
               ),
             ],
           ),

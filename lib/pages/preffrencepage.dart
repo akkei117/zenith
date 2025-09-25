@@ -23,6 +23,7 @@ class _PreffrenceState extends State<Preffrence> {
   final List<String> semesters = [
     '1st Semester(common for all)',
     '2nd Semester(Common for all)',
+    '3rd Semester(CSE - AIML)',
   ];
 
   @override
