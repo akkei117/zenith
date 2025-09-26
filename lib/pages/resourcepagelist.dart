@@ -73,7 +73,200 @@ class ResourceListPage extends StatelessWidget {
         ),
       ];
     }
+    // This is the PYQs Section of the Sem 3 \\
+    
+
+    //Introduction to AI
+    else if (type == 'Previous Year Question Paper' &&
+        subjectTitle == "Introduction to AI") {
+      return [
+        Resource(
+          title: 'End Semesters Test(Introduction to AI)',
+          description:
+              'Previous year question paper of Introduction to AI(End Semester Test).',
+          fileType: 'PDF',
+          date: '22-07-2025',
+          url: 'https://drive.google.com/file/d/10GztIQyOTpnsqNuAE9iWU2YB0dCOF8dw/view',
+        ),
+        Resource(
+          title: 'Mid Semester Test 1 (Introduction to AI)',
+          description:
+              'Previous year question paper of Introduction to AI(End Semester Test 1).',
+          fileType: 'PDF',
+          date: '22-07-2025',
+          url: 'https://drive.google.com/file/d/1UeZSv08BvoLvp0VVBwqdcudC2R0wKL96/view',
+        ),
+        Resource(
+          title: 'Mid Semester Test 2 (Introduction to AI)',
+          description:
+              'Previous year question paper of Introduction to AI(End Semester Test 1).',
+          fileType: 'PDF',
+          date: '22-07-2025',
+          url: 'https://drive.google.com/file/d/1hg15sALnk9tgzjqnVuyczFjRvlvHuheB/view',
+        ),
+      ];
+    }
+
+    //Computer Organization and Architecture
+    else if (type == 'Previous Year Question Paper' &&
+        subjectTitle == "Computer Organization and Architecture") {
+      return [
+        Resource(
+          title: 'End Semesters Test(Computer Organization and Architecture)',
+          description:
+              'Previous year question paper of Computer Organization and Architecture(End Semester Test).',
+          fileType: 'PDF',
+          date: '22-07-2025',
+          url: 'https://drive.google.com/file/d/1qnUnnZ6vxF39-pYlDSYF5-7cVl7Ady9C/view',
+        ),
+        Resource(
+          title: 'Mid Semester Test 1 (Computer Organization and Architecture)',
+          description:
+              'Previous year question paper of Computer Organization and Architecture(End Semester Test 1).',
+          fileType: 'PDF',
+          date: '22-07-2025',
+          url: 'https://drive.google.com/file/d/1UbBA-yW-eIXEXO4UbK538SUwDCdJhlBA/view',
+        ),
+        Resource(
+          title: 'Mid Semester Test 2 (Computer Organization and Architecture)',
+          description:
+              'Previous year question paper of Computer Organization and Architecture(End Semester Test 1).',
+          fileType: 'PDF',
+          date: '22-07-2025',
+          url: 'https://drive.google.com/file/d/1fxQTX7K005eRBmiQ3QZTdzSbyO0J-xJK/view',
+        ),
+      ];
+    }
+
+    //Data Strcutures and Algorithm
+    else if (type == 'Previous Year Question Paper' &&
+        subjectTitle == "Data Structure and Algorithm") {
+      return [
+        Resource(
+          title: 'End Semesters Test(Data Strcutures and Algorithm)',
+          description:
+              'Previous year question paper of Data Strcutures and Algorithm(End Semester Test).',
+          fileType: 'PDF',
+          date: '22-07-2025',
+          url: 'https://drive.google.com/file/d/10GztIQyOTpnsqNuAE9iWU2YB0dCOF8dw/view',
+        ),
+        Resource(
+          title: 'Mid Semester Test 1 (Data Strcutures and Algorithm)',
+          description:
+              'Previous year question paper of Data Strcutures and Algorithm(End Semester Test 1).',
+          fileType: 'PDF',
+          date: '22-07-2025',
+          url: 'https://drive.google.com/file/d/1UeZSv08BvoLvp0VVBwqdcudC2R0wKL96/view',
+        ),
+        Resource(
+          title: 'Mid Semester Test 2 (Data Strcutures and Algorithm)',
+          description:
+              'Previous year question paper of Data Strcutures and Algorithm(End Semester Test 1).',
+          fileType: 'PDF',
+          date: '22-07-2025',
+          url: 'https://drive.google.com/file/d/1hg15sALnk9tgzjqnVuyczFjRvlvHuheB/view',
+        ),
+      ];
+    }
+    
+    //Probability and Statistics
+    else if (type == 'Previous Year Question Paper' &&
+        subjectTitle == "Probability and Statistics") {
+      return [
+        Resource(
+          title: 'End Semesters Test(Probability and Statistics)',
+          description:
+              'Previous year question paper of Probability and Statistics(End Semester Test).',
+          fileType: 'PDF',
+          date: '22-07-2025',
+          url: 'https://drive.google.com/file/d/1sfOL7i7wQUSOYOQ3qbDsJOR2VgpdHNjx/view',
+        ),
+        Resource(
+          title: 'Mid Semester Test 1 (Probability and Statistics)',
+          description:
+              'Previous year question paper of Probability and Statistics(Mid Semester Test 1).',
+          fileType: 'PDF',
+          date: '22-07-2025',
+          url: 'https://drive.google.com/file/d/1VANSrj2CjYjnBoJOYdChb_ZkxsK_Vyq9/view',
+        ),
+        Resource(
+          title: 'Mid Semester Test 2 (Probability and Statistics)',
+          description:
+              'Previous year question paper of Probability and Statistics(Mid Semester Test 2).',
+          fileType: 'PDF',
+          date: '22-07-2025',
+          url: 'https://drive.google.com/file/d/1fwx-5igxbrbzA197YbLSUDeLWi1Bhf-C/view',
+        ),
+      ];
+    }
+
+    //Object Oriented Programming and Methodology
+    else if (type == 'Previous Year Question Paper' &&
+        subjectTitle == "Object Orinted Programming and Methodology") {
+      return [
+        Resource(
+          title: 'End Semesters Test(Object Oriented Programming and Methodology)',
+          description:
+              'Previous year question paper of Object Oriented Programming and Methodology(End Semester Test).',
+          fileType: 'PDF',
+          date: '22-07-2025',
+          url: 'https://drive.google.com/file/d/1wiPImJEqDc5ObatPFh28vKk7NC-kGGDU/view',
+        ),
+        Resource(
+          title: 'Mid Semester Test 1 (Object Oriented Programming and Methodology)',
+          description:
+              'Previous year question paper of Object Oriented Programming and Methodology(End Semester Test 1).',
+          fileType: 'PDF',
+          date: '22-07-2025',
+          url: 'https://drive.google.com/file/d/1Uze4jPvHU3zRZZWyxtGkDEOEec7v0iSN/view',
+        ),
+        Resource(
+          title: 'Mid Semester Test 2 (Object Oriented Programming and Methodology)',
+          description:
+              'Previous year question paper of Object Oriented Programming and Methodology(End Semester Test 1).',
+          fileType: 'PDF',
+          date: '22-07-2025',
+          url: 'https://drive.google.com/file/d/1h0UT60Tj5Z9U5kGAUa3IZ_MmMX63cx8P/view',
+        ),
+      ];
+    }
+
+    //Entrepreneurship and Principles of Management
+    else if (type == 'Previous Year Question Paper' &&
+        subjectTitle == "Entrepreneurship and Principles of Management") {
+      return [
+        Resource(
+          title: 'End Semesters Test(Entrepreneurship and Principles of Management)',
+          description:
+              'Previous year question paper of Entrepreneurship and Principles of Management(End Semester Test).',
+          fileType: 'PDF',
+          date: '22-07-2025',
+          url: 'https://drive.google.com/file/d/1-3ZhUNOElBmtksLWGjfsPSBFX6PQSn0_/view',
+        ),
+        Resource(
+          title: 'Mid Semester Test 1 (Entrepreneurship and Principles of Management)',
+          description:
+              'Previous year question paper of Entrepreneurship and Principles of Management(End Semester Test 1).',
+          fileType: 'PDF',
+          date: '22-07-2025',
+          url: 'https://drive.google.com/file/d/1UujjOAxL71_Ms2LYZ0_7jzNPjekCHBjj/view',
+        ),
+        Resource(
+          title: 'Mid Semester Test 2 (Entrepreneurship and Principles of Management)',
+          description:
+              'Previous year question paper of Entrepreneurship and Principles of Management(End Semester Test 1).',
+          fileType: 'PDF',
+          date: '22-07-2025',
+          url: 'https://drive.google.com/file/d/1zAM_t86WGSCDroxUZ5-mmeb_82mcu5SS/view',
+        ),
+      ];
+    }
+
+
+
     // This is the PYQs Section of the Sem 1 \\
+
+
 
 
     //PYQS of Linear Algebra(Done)
